@@ -1,6 +1,5 @@
 const inputBox = document.getElementById("input-box");
 const listConatiner = document.getElementById("list-container");
-const text_edit = document.getElementById("list-container");
 
 function addTask() {
   if (inputBox.value === "") {
@@ -17,13 +16,11 @@ function addTask() {
   saveData();
 }
 
-listConatiner.addEventListener(
-  "click",
-  function (e) {
+listConatiner.addEventListener("click",function (e) {
     if (e.target.tagName === "LI") {
       e.target.classList.toggle("checked");
       saveData();
-    } else if (e.target.tagName === "SPAN") {
+    } else if(e.target.tagName === "SPAN") {
       e.target.parentElement.remove();
       saveData();
     }
